@@ -1,0 +1,796 @@
+/* Nav css starter her */
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 10px;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+a{text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+#headerlanding{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.container{
+    width: 100%;
+    max-width: 117rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.menu-icons{
+    color: rgb(20, 18, 18);
+    font-size: 4rem;
+    position: absolute;
+    top: 50%;
+    right: 2rem;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 1500;
+    display: none;
+}
+
+nav{
+    width: 100%;
+    height: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+img.logo{
+    position:absolute;
+    left: 5%;
+    top: 20%;
+    
+}
+
+.nav-list{
+    display: flex;
+    align-items: center;
+}
+
+.nav-list li{
+    line-height: 8rem;
+    position: relative;
+}
+
+.sub-menu li{
+    line-height: 4rem;
+}
+
+.nav-list a{
+    display: block;
+    color: rgb(155, 121, 59);
+    padding: 0 1.5rem;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    transition: color 650ms;
+}
+
+.nav-list a:hover{
+    color:rgb(53, 60, 124);
+}
+
+.sub-menu {
+    width: 20rem;
+    display: block;
+    position: absolute;
+    border-top: 3px solid #caa869;
+    background-color: #191919;
+    z-index: 100;
+    top: 16rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 650ms ease;
+}
+
+.sub-menu::before{
+    content:"";
+    position: absolute;
+    top: -2.5rem;
+    left: 3rem;
+    border: 1.2rem solid transparent;
+    border-bottom-color: #caa869;
+}
+
+.sub-menu .sub-menu::before{
+    top: .9rem;
+    left: -2.5rem;
+    border: 1.2rem solid transparent;
+    border-right: #0c1f8a;
+
+}
+
+.nav-list li:hover > .sub-menu{
+    top: 8rem;
+    opacity: 1;
+    visibility: visible;
+}
+
+/*Media queries navbar*/
+@media screen and (max-width: 850px){
+    .nav-list{
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        display: none;
+        flex-direction: column;
+        background-color: #191919;
+        z-index: 1000;
+        align-items: initial;
+    }
+
+    .nav-list > li{
+        line-height: 6rem;
+    }
+
+    .sub-menu{
+        position: initial;
+        border: 3px solid transparent;
+        border-left-color: #caa869;
+        margin-left: 1rem;
+        max-height: 0;
+    }
+
+    .sub-menu::before{
+        display: none;
+    }
+
+    .nav-list li:hover > .sub-menu{
+        opacity: 1;
+        visibility: visible;
+        max-height: initial;
+    }
+
+    .menu-icons{
+        display: block;
+    }
+
+    .ion-md-close{
+        display: none;
+    }
+
+    nav.active .ion-md-close{
+        display: block;
+    }
+
+    nav.active .ion-md-menu{
+        display: none;
+    }
+
+    nav.active .nav-list{
+        display: flex;
+    }
+
+}
+/* Nav css slutter her */
+
+/* Kodning af forside starter her --SECTION A-- */
+.section-a .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 3rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-a h1 {
+    font-size: 4rem;
+    color: #0c1f8a;
+}
+
+.section-a p {
+    margin: 1rem 0;
+}
+
+.btn {
+    display: inline-block; 
+    background: #999;
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    transition: background 500ms ease;
+}
+
+.btn:hover {
+    background:#0c1f8a;
+}
+
+/* Section B*/
+.section-b {
+    position: relative;
+    background: url(forside6.png) no-repeat bottom center/cover;
+    height: 600px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.9;
+}
+
+.section-b-inner {
+    color: rgb(0, 0, 0);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;    
+    justify-content: center;
+    margin: auto;
+    max-width: 860px;
+    padding: 5rem 0;
+}
+
+.section-b-inner h3 {
+    font-size: 2rem;
+}
+
+.section-b-inner h2 {
+    font-size: 5rem;
+    margin-top: 1rem;
+}
+
+.section-b-inner p {
+    font-size: 1.5rem;
+}
+
+/* Section C*/
+.section-c .gallery {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.section-c .gallery a:first-child {
+    grid-row: 1/3;
+    grid-column: 1/3;
+}
+
+.section-c .gallery a:nth-child(2) {
+    grid-column: 3/5;
+}
+
+.section-c .gallery img, .section-c .gallery a {
+    width: 100%;
+    height: 100%;
+}
+
+
+/*Styling af footeren*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.footer {
+    padding:40px 0;
+    background: #191919
+}
+.footer .ikoner {
+    text-align: center;
+    padding-bottom: 25px;
+    color: #ffffff;
+}
+
+.footer .ikoner a {
+    font-size: 24px;
+    color:inherit;
+    border: 1px solid #ffffff;
+    width: 40px;
+    height: 40px;
+    line-height: 38px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 8px;
+}
+    
+.footer ul {
+    margin-top: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 17px;
+    line-height: 1.6;
+    margin-bottom: 0;
+    text-align: center;
+    color: #ffffff;
+}
+.footer ul li a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.footer ul li {
+    display: inline-block;
+    padding:0 15px;
+}
+
+.footer .copyright {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 13px;
+    color: #ffffff
+}
+
+/*Media Queries Forside*/
+@media(max-width: 700px) {
+    .section-a .container{
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .section-a .container div:first-child {
+        order: 2;
+    }
+
+    .section-a .container div:last-child {
+        order: -1;
+    }
+
+    .section-a img {
+        width: 80%;
+        margin: auto;
+        padding-top: 6rem;
+    }
+
+    .section-b-inner h2 {
+        font-size: 3.5rem;
+    }
+
+    .section-c .gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .section-c .gallery a:first-child {
+        grid-row: 1/1;
+        grid-column: 1/1;
+    }
+
+    .section-c .gallery a:nth-child(2) {
+        grid-row: 2/2;
+        grid-column: 2/4;
+    }
+
+    .section-c .gallery a:last-child {
+       display: none;
+    }
+}
+
+
+/* Konkurrence Styling*/
+
+#bodykonkurrence {
+    margin: 0;
+    text-align: center;
+    background: rgb(0, 0, 0);
+    color: #fff;
+    line-height: 1.5;
+}
+
+.billedekonkurrence {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+#kh1 .kh2 .kh3 {
+    margin: 0;
+    padding: 1em 0;
+}
+
+.kp {
+    margin: 0;
+    padding: 1em 0;
+}
+
+/* Vind et års forbrug*/
+
+#showcase {
+    min-height: 450px;
+    color: #fff;
+    text-align: center;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+#showcase .bg-image {
+    position: absolute;
+    background: #333 url(konkurrence.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 450px;
+    z-index: -1;
+    opacity: 1;
+}
+
+#kh1 {
+    padding-top: 100px;
+}
+
+#showcase .content-wrap,
+#section-a .content-wrap {
+    padding: 0 1.5em;
+}
+
+/*Sektion A*/
+
+#section-a {
+    background: #eaeaea;
+    color:#333;
+    padding-bottom: 2em;
+}
+
+/*Sektion B*/
+
+#section-b {
+    padding: 2em 1em 1em;
+}
+
+#section-b, #ulb {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#section-b, .lib {
+    background-image: linear-gradient(to bottom right, blue, orange);
+    color: rgb(24, 21, 21);
+}
+
+.card-content {
+    background: rgb(226, 226, 226);
+}
+
+.card-content {
+    padding: 1.5em;
+}
+
+/*Sektion C*/
+
+#section-c {
+    background: white;
+    color: #333;
+    padding: 2em;
+}
+
+/*Sektion D*/
+
+#section-d .box {
+    padding: 2em;
+    color: #fff;
+    background:rgb(129, 94, 29);
+}
+
+#section-d .box:first-child {
+    background: #030a3a;
+}
+
+/* Media Queries Konkurrence*/
+
+@media(min-width:700px) {
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr repeat(2, minmax(auto, 25em)) 1fr;
+    }
+
+    #section-a .content-text {
+        columns: 2;
+        column-gap: 2em;
+    }
+
+    #section-a .content-text .kp {
+        padding-top:0;
+    }
+
+    .content-wrap, 
+    #section-b, #ulb  {
+        grid-column: 2/4;
+
+    }
+    .box {
+        grid-column: span 2;
+    }
+
+    #section-b #ulb {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    #section-b .lib {
+        width: 31%;
+    }
+
+}
+
+/*CSS Aftensmad start*/
+#bodyop {
+    margin: 0;
+    background: rgb(236, 235, 235);
+    height: auto;
+    font-size: 10px;
+}
+
+#h1op {
+    font-weight: 400;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.h2op {
+    font-weight: 400;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    margin: 0;
+}
+
+.picpic {
+    display: block;
+    width: 100%;
+}
+
+#landingmain {
+    max-width: 900px;
+    margin: auto;
+    box-shadow: 30px 0px 40px rgba(0,0,0,0.4),
+    -30px 0px 40px rgba(0,0,0,0.4);
+}
+
+#landing {
+    background: #fff;
+}
+
+#landing-text {
+    display: flex;
+    flex: 0 1 40vw;
+    height: 50vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+#landing-text #h2op {
+    color: #888;
+}
+
+#landing-image {
+    background: url(forsideopskrift.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 50vh;
+    flex: 0 1 60vw;
+    margin: 0;
+}
+
+#headerop {
+    padding: 1.5rem;
+    text-align: center;
+    background: #333;
+    color: #fff;
+}
+
+#headerop #h2op {
+    border-left: dotted 1px #fff;
+    border-right: dotted 1px #fff;
+    display: inline-block;
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+.caption {
+    padding: 0.8rem;
+    text-align: center;
+}
+
+.h3op {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+/* Media Queries Aftensmad*/
+/* Skærme 500px og op*/
+@media(min-width: 700px) {
+    #landing {
+        display: flex;
+        height: 100%;
+    }
+
+    #landing-text {
+        height: 100vh;
+    }
+
+    #landing-image {
+        height: 100vh;
+    }
+}
+
+/*Skærme 700px og op bliver alle knapperne "btns" større */
+@media(min-width: 700px) {
+    .btn {
+        padding: 1rem 3rem;
+    }
+}
+
+.button {
+    display: inline-block; 
+    background: #999;
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    transition: background 500ms ease;
+}
+
+.button:hover {
+    background:#0c1f8a;
+}
+
+
+/*CSS W3S Submit form*/
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+  
+  input[type=submit] {
+    background-color: #46860a;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #0c1f8a;
+  }
+
+  
+#submitform {
+    border-radius: 5px;
+    background: #333 url(konkurrence.png);
+    background-size: cover;
+    padding: 60px;
+  }
+  
+  #h3forside {
+    color:#0c1f8a;
+  }
+
+  #h1op {
+    color:#0c1f8a;
+  }
+
+
+  /*Økologi CSS start */
+
+#okobody {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    min-height: 100vh;
+    background: url(konkurrence.png);
+}
+
+#okocontainer {
+    position: relative;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px, 1fr));
+    grid-template-rows: minmax(100px, auto);
+    margin: 90px;
+    grid-auto-flow: dense;
+    grid-gap: 10px;
+    box-shadow: 30px 0px 40px rgba(0,0,0,0.4),
+    -30px 0px 40px rgba(0,0,0,0.4);
+}
+
+#okocontainer .okobox {
+    color: #929796;
+    background: rgb(172, 150, 92);
+    padding: 20px;
+    display: grid;
+    font-size: 20px;
+    place-items: center;
+    text-align: center;
+    color:#ffffff;
+    transition: 1s;
+}
+
+#okocontainer .okobox:hover {
+    background: #7082e7;
+
+}
+
+
+#okocontainer .okobox .okoimg {
+    position: relative;
+    max-width: 20rem;
+    margin-bottom: 10px;
+}
+
+#okocontainer .okobox:nth-child(1)
+{
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+#okocontainer .okobox:nth-child(2)
+{
+    grid-column: span 1;
+    grid-row: span 2;
+}
+
+#okocontainer .okobox:nth-child(4)
+{
+    grid-column: span 1;
+    grid-row: span 2;
+}
+
+#okocontainer .okobox:nth-child(5)
+{
+    grid-column: span 3;
+    grid-row: span 2;
+}
+
+
+
+/*Media Queries Økologi*/
+
+@media (max-width: 911px){
+    #okocontainer {
+        grid-template-columns: repeat(auto-fill,minmax(50%, 1fr));
+        grid-template-rows: minmax(auto, auto); 
+    }
+    #okocontainer .okobox {
+        grid-column: unset !important;
+        grid-row: unset !important;
+    }
+}
